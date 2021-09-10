@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Varun.Algos.Linear.List;
 
-namespace Varun.Algos.NonLinear.Graphs.Undirected
+namespace Varun.Algos.NonLinear.Graphs.Directed
 {
     public class AdjacencyList : AdjacencyListGraphsBase
     {
@@ -20,7 +20,8 @@ namespace Varun.Algos.NonLinear.Graphs.Undirected
         public void AddEdge(int x,int y)
         {
             linkedLists[MemoryMapIndex(x)].AddNode(new Node<int> { Value = MemoryMapIndex(y) });
-            linkedLists[MemoryMapIndex(y)].AddNode(new Node<int> { Value = MemoryMapIndex(x) });
         }
+
+      
     }
 }
