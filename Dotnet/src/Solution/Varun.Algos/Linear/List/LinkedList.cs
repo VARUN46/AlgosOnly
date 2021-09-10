@@ -28,6 +28,11 @@ namespace Varun.Algos.Linear.List
            
         }
 
+        public Node<T> GetHead()
+        {
+            return head;
+        }
+
         public override string ToString()
         {
             StringBuilder result = new ();
