@@ -28,7 +28,7 @@ namespace Varun.Algos.NonLinear.Trees.Sorting
             arr[destIndex] = temp;
         }
 
-        private void Heapify(int[] arr, int sizeOfArray, int rootIndex)
+        private void MaxHeapify(int[] arr, int sizeOfArray, int rootIndex)
         {
             int largestValueIndex = rootIndex;
             int leftIndex = this.GetLeftIndex(rootIndex);
@@ -46,7 +46,7 @@ namespace Varun.Algos.NonLinear.Trees.Sorting
             if (largestValueIndex != rootIndex) //If there is update in value 
             {
                 Swap(arr, largestValueIndex, rootIndex);
-                Heapify(arr, sizeOfArray, largestValueIndex);
+                MaxHeapify(arr, sizeOfArray, largestValueIndex);
             }
 
         }
@@ -57,13 +57,13 @@ namespace Varun.Algos.NonLinear.Trees.Sorting
                 currentRootIndex >= 0; //While we do not reach the root node
                 currentRootIndex--) //Move up in hierarchy
             {
-                Heapify(arr, arr.Length, currentRootIndex);
+                MaxHeapify(arr, arr.Length, currentRootIndex); // A heap means, all the values in root node are greater than child nodes
             }
 
-            for (int i = arr.Length-1; i > 0; i--)
+            for (int i = arr.Length-1; i > 0; i--) //Length of array will be reduced cutting out the last element
             {
-                Swap(arr, i, 0);
-                Heapify(arr, i, 0);
+                Swap(arr, i, 0);//Move the largest element at the last
+                MaxHeapify(arr, i, 0); //This will again move the max element at the root node
             }
         }
 

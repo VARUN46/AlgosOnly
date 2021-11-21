@@ -13,10 +13,16 @@ namespace Algos.Tests.Trees
     {
         [Test]
         [TestCase(12, 11, 6, 5, 13, 7)]
+        [TestCase(12, 11, 6, 5, 13, 7, 12, 11, 6, 5, 13, 7, 12, 11, 6, 5, 13, 7)]
         public void DoHeapSort(params int[] arr)
         {
+            var expected = (int[])arr.Clone();
+            Array.Sort(expected);
+
             HeapSort sorter = new HeapSort();
             sorter.Sort(arr);
+
+            Assert.AreEqual(expected, arr);
         }
     }
 }
