@@ -12,7 +12,7 @@ namespace Algos.Tests.Trees
     public class SortTests
     {
         [Test]
-        [TestCase(12, 11, 13, 5, 6, 7)]
+        [TestCase(12, 11, 6, 5, 13, 7)]
         public void DoHeapSort(params int[] arr)
         {
             HeapSort sorter = new HeapSort();

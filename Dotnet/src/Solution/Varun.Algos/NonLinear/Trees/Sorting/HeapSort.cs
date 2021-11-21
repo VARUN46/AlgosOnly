@@ -54,7 +54,7 @@ namespace Varun.Algos.NonLinear.Trees.Sorting
         public void Sort(int[] arr)
         {
             for (int currentRootIndex = arr.Length/2 - 1; //Loop through all non leaf nodes starting from bottom
-                currentRootIndex > 0; //While we do not reach the root node
+                currentRootIndex >= 0; //While we do not reach the root node
                 currentRootIndex--) //Move up in hierarchy
             {
                 Heapify(arr, arr.Length, currentRootIndex);
@@ -62,8 +62,8 @@ namespace Varun.Algos.NonLinear.Trees.Sorting
 
             for (int i = arr.Length-1; i > 0; i--)
             {
-                Swap(arr, 0, i);
-                Heapify(arr, arr.Length, 0);
+                Swap(arr, i, 0);
+                Heapify(arr, i, 0);
             }
         }
 
